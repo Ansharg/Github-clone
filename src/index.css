@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    background-color: #0e1116;
+}
+
+input::-webkit-input-placeholder{
+    color: gainsboro;
+}
+/* div
+{
+    border: 1px solid red;
+} */

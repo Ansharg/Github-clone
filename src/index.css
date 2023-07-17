@@ -4,10 +4,16 @@
 
 *{
     background-color: #0e1116;
+    scroll-behavior: smooth;
 }
 
-input::-webkit-input-placeholder{
+#search::-webkit-input-placeholder{
     color: gainsboro;
+}
+
+#emailaddress::-webkit-input-placeholder{
+    color: gray;
+    font-weight: 300;
 }
 
 @keyframes updown {
@@ -16,7 +22,11 @@ input::-webkit-input-placeholder{
     100% {top: 3.6rem;}
 }
 
-div
+::-webkit-scrollbar-track{
+    
+}
+
+/* div
 {
     border: 1px solid red;
-}
+} */

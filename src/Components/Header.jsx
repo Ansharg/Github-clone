@@ -50,7 +50,7 @@ export default function Header() {
                     <button type='button' className='text-white w-16 '>Sign in</button>
                 </div>
                 <div className=' bg-transparent'>
-                    <button type='button' className='text-white w-20 py-1 rounded border-white border'>Sign up</button>
+                    <button type='button' className='text-white w-20 py-1 rounded border-white hover:text-gray-300 hover:border-gray-300 transition ease-in-out duration-200 border'>Sign up</button>
                 </div>
             </div>
         </div>

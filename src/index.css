@@ -26,9 +26,9 @@
     100% {top: 3.6rem;}
 }
 
-::-webkit-scrollbar-track{
+/* ::-webkit-scrollbar-track{
     
-}
+} */
 
 @keyframes line {
     0% {width: 0;}

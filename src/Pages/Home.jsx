@@ -14,12 +14,19 @@ import {Tilt} from 'react-tilt'
 import {FaPython} from 'react-icons/fa'
 import {BiLogoJavascript} from 'react-icons/bi'
 import {FaGolang} from 'react-icons/fa6'
+import {BsArrowRight} from 'react-icons/bs'
+import {LuHeartHandshake} from 'react-icons/lu'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
+import "animate.css/animate.min.css";
 
 export default function Home() {
+    const [buttonOne,setButtonOne] = useState(false);
+    const [buttonTwo,setButtonTwo] = useState(false);
     const [lineAfter,setLineAfter] = useState(false);
     const [lineAfterGithub,setLineAfterGithub] = useState(false);
     const [githubActions,setGithubActions] = useState(false);
     const [githubMobile,setGithubMobile] = useState(false);
+    const [exploreGithub,setExploreGithub] = useState(false);
     const defaultOptions = {
         reverse:        false,  // reverse the tilt direction
         max:            5,     // max tilt rotation (degrees)
@@ -44,22 +51,34 @@ export default function Home() {
                     <BsCode className='text-white text-3xl bg-transparent' />
                 </div>
                 <div className='h-[27rem] bg-gradient-to-b from-[#6b43c1] to-green-500 w-1 rounded-full relative left-[124px] top-[3.5rem] '></div>
-                <div className='relative'>
+                <div className='relative z-10'>
+                    <AnimationOnScroll animateIn='animate__fadeIn'>
                     <div className='w-16 h-16 absolute flex justify-center items-center left-24 top-16 ' style={{background:"radial-gradient(50% 50% at 50.00% 50.00%, rgba(49, 255, 45, 0.55) 0%, rgba(255, 255, 255, 0.00) 100%)"}}>
-                        <TfiBag className='text-white text-2xl bg-transparent'/>
+                        <TfiBag className='text-white text-2xl bg-transparent isolate'/>
                     </div>
+                    </AnimationOnScroll>
                 </div>
-                <div className='h-[17rem] bg-gradient-to-b from-green-500 to-[#0e1116] w-1 rounded-full relative left-[7.8rem] top-36 '></div>
+                <div className='bg-transparent z-0'>
+                    <AnimationOnScroll animateIn='animate__fadeInDown' className='bg-transparent' delay={800} offset={50}>
+                        <div className='h-[17rem] bg-gradient-to-b from-green-500 to-[#0e1116] w-1 rounded-full relative left-[7.8rem] top-36 '></div>
+                    </AnimationOnScroll>
+                </div>
             </div>
             <div className='bg-transparent mt-[22rem] ml-[-16rem] relative'>
                 <div className='bg-transparent'>
-                    <button className='flex rounded-full px-5 py-3 items-center bg-transparent border border-gray-600 space-x-6' style={{background: "radial-gradient(137.80% 80.58% at 49.90% 49.69%, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 100%)"}}>
+                    <button className='flex rounded-full px-5 py-3 items-center bg-transparent border border-gray-600 space-x-6' style={{background: "radial-gradient(137.80% 80.58% at 49.90% 49.69%, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.00) 100%)"}} onMouseOver={()=>setButtonOne(true)} onMouseLeave={()=>setButtonOne(false)}>
                         <img src="https://github.githubassets.com/images/modules/site/eyebrow-banner-icon-copilot-x.svg" alt="" className='bg-transparent h-[45px]' />
                         <div className='text-white bg-transparent'>
                             <p className=' text-left bg-transparent font-semibold'>Introducing GitHub Copilot X</p>
                             <p className='bg-transparent text-gray-500'>Your AI pair programmer is leveling up</p>
                         </div>
-                        <AiOutlineRight className='text-white bg-transparent'/>
+                        <div className='transition duration-150 ease-in-out'>
+                            {!buttonOne ? (
+                                <AiOutlineRight className='text-white bg-transparent'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg'/>
+                            )}
+                        </div>
                     </button>
                 </div>
                 <div className=' mt-6 text-left bg-transparent space-y-2'>
@@ -70,7 +89,13 @@ export default function Home() {
                     <input type="text" id='emailaddress' className='bg-white h-12 w-[25%] rounded-l-lg px-5' placeholder='Email address'/>
                     <button className='bg-[#6b43c1] text-white h-12 px-5 rounded-r-lg font-bold'>Sign up for GitHub</button>
                     <div className='h-12 rounded-full ml-3 mr-3 w-[2px] border border-gray-500'></div>
-                    <button className='bg-transparent text-white h-12 px-6 border border-[#8f62f0] text-lg rounded-lg font-bold hover:border-white hover:border-2 transition duration-150 ease-in-out flex justify-center items-center'>start a free enterprise trial <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/> </button>
+                    <button className='bg-transparent text-white h-12 px-6 border border-[#8f62f0] text-lg rounded-lg font-bold hover:border-white hover:border-2 transition duration-150 ease-in-out flex justify-center items-center' onMouseOver={()=>setButtonTwo(true)} onMouseLeave={()=>setButtonTwo(false)}>start a free enterprise trial 
+                    {!buttonTwo ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                    </button>
                 </div>
                 <div className='mt-[130px]'>
                     <p className='text-gray-500 text-lg font-light'>Trusted by the world's leading organizations </p>
@@ -83,10 +108,14 @@ export default function Home() {
                         <img src="https://github.githubassets.com/images/modules/site/home-campaign/logos/telus.svg" alt="Telus" className='h-8' />
                     </div>
                 </div>
-                <div className='mt-[9rem]'>
+                <div className='mt-[10rem] overflow-hidden'>
+                    <AnimationOnScroll animateIn='animate__fadeInLeft'>
                     <p className='text-white text-2xl font-semibold mb-12'>Productivity</p>
+                    </AnimationOnScroll>
                     <div className='w-[70%]'>
+                        <AnimationOnScroll animateIn='animate__fadeIn' delay={800}>
                         <p className='text-white font-semibold text-5xl bg-transparent'><span className='text-green-400'>Accelerate high-quality software development.</span> Our AI-powered platform drives innovation with tools that boost developer velocity.</p>
+                        </AnimationOnScroll>
                     </div>
                 </div>
             </div>
@@ -241,32 +270,50 @@ export default function Home() {
                                 <p className='text-gray-500 bg-transparent'>Debug Console</p>
                             </div>
                             <div className='bg-transparent pl-5 tracking-wider'>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:36] Starting '</span><span className='text-[#477fef] bg-transparent'>watch-extension:vscode-api-tests</span><span className='text-gray-500 bg-transparent'>' ...</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:36] Finished '</span><span className='text-[#477fef] bg-transparent'>clean-extension:typescript-language-features</span><span className='text-gray-500 bg-transparent'>'</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:36] Starting '</span><span className='text-[#477fef] bg-transparent'>watch-extension:typescript-language-features</span><span className='text-gray-500 bg-transparent'>'</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:36] Finished '</span><span className='text-[#477fef] bg-transparent'>clean-extension:php-language-features</span><span className='text-gray-500 bg-transparent'>' after</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:36] Starting '</span><span className='text-[#477fef] bg-transparent'>watch-extension:php-language-features</span><span className='text-gray-500 bg-transparent'>' ...</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:40] Finished '</span><span className='text-[#477fef] bg-transparent'>clean-extension:html-language-features-server</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:40] Starting '</span><span className='text-[#477fef] bg-transparent'>watch-extension:html-language-features-server</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:43] Finished '</span><span className='text-[#477fef] bg-transparent'>clean-client</span><span className='text-gray-500 bg-transparent'>' after</span><span className='text-[#8e5ed2] bg-transparent'> 7.33 s</span>
+                                    </AnimationOnScroll>
                                 </p>
-                                <p className='bg-transparent'>
+                                <p className='bg-transparent overflow-hidden'>
+                                    <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent'>
                                     <span className='text-gray-500 bg-transparent'>[09:43:43] Starting '</span><span className='text-[#477fef] bg-transparent'>watch-client</span><span className='text-gray-500 bg-transparent'>' ...</span>
+                                    </AnimationOnScroll>
                                 </p>
                             </div>
                         </div>
@@ -286,34 +333,51 @@ export default function Home() {
         </section>
         <section className=' max-h-[90vh] w-screen bg-transparent'>
             <div className='flex max-h-5xl  max-w-7xl mx-auto bg-transparent'>
-                <div className='relative w-40 bg-transparent'>
+                <div className='relative w-40 bg-transparent overflow-hidden'>
+                    <AnimationOnScroll animateIn='animate__fadeInDown' animateOut='animate__fadeOutUp'>
                     <div className='w-2 h-[90vh] ml-12 text-white relative bg-transparent' style={{background: "radial-gradient(50% 50% at 50.00% 50.00%, rgba(49, 255, 45, 0.55) 0%, rgba(255, 255, 255, 0.00) 100%)"}}></div>
+                    </AnimationOnScroll>
+                    <AnimationOnScroll animateIn='animate__fadeIn' offset={0} style={{animationDuration:"0.2 s"}} >
                     <img src="https://github.githubassets.com/images/modules/site/home-campaign/git-branch-productivity.svg" alt="line svg" className='bottom-8 right-3 absolute bg-transparent w-20' />
+                    </AnimationOnScroll>
                 </div>
-                <div className='w-full pt-24 bg-transparent' style={{background:"url('https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp')", backgroundSize:"cover"}}>
+                <div className='w-full pt-24 ' style={{background:"url('https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp')", backgroundSize:"cover"}}>
                     <div className='flex h-52 bg-transparent'>
                         <div className='w-[50%] bg-transparent'>
+                            <AnimationOnScroll className='bg-transparent' animateIn='animate__fadeInRight' animateOut='animate__fadeOutRight'>
                             <p className='text-gray-500 text-2xl font-medium w-[85%] bg-transparent'><span className='text-white'>GitHub Codespaces</span> offers a complete dev environment in seconds, so you can code, build, test, and open pull requests from any repo anywhere.</p>
-                            <button className='mt-5 text-white text-xl font-semibold py-2 flex items-center bg-transparent' onMouseOver={()=>setLineAfter(true)} onMouseLeave={()=>setLineAfter(false)}>Check out GitHub Codespaces <AiOutlineRight className=' ml-1 mt-1' /></button>
+                            <button className='mt-5 text-white text-xl font-semibold py-2 flex items-center bg-transparent' onMouseOver={()=>setLineAfter(true)} onMouseLeave={()=>setLineAfter(false)}>Check out GitHub Codespaces 
+                            {!lineAfter ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
                             {lineAfter ? (
                                 <div className='w-[50%]'>
                                     <hr id='buttonbottom' />
                                 </div>
                             ) : ""}
+                            </AnimationOnScroll>
                         </div>
-                        <div className='relative'>
+                        <div className='relative '>
+                            <AnimationOnScroll animateIn='animate__fadeInRight'>
                             <div>
                                 <img src="https://github.githubassets.com/images/modules/site/codespaces/illo-ports.png" alt="" className='h-52 rounded-lg'/>
                             </div>
-                            <div className='absolute right-[-6rem] top-[-11rem] rounded-lg bg-transparent'>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateIn='animate__fadeInLeft' className='absolute right-[-6rem] top-[-11rem] rounded-lg bg-transparent' offset={300}>
+                            <div className='bg-transparent'>
                                 <img src="https://github.githubassets.com/images/modules/site/codespaces/illo-context-menu.png" alt="" className='h-72 rounded-lg bg-transparent border border-black shadow-xl'/>
                                 <div className='relative bg-transparent h-12 w-full top-[-8rem]'>
                                     <img src="https://github.githubassets.com/images/modules/site/codespaces/illo-cursor.png" alt="mouse" className='absolute h-12 bg-transparent right-16'/>
                                 </div>
                             </div>
+                            </AnimationOnScroll>
                         </div>
                     </div>
-                    <div className='mt-12 bg-transparent'>
+                    <div className='mt-12 bg-transparent overflow-hidden'>
+                        <AnimationOnScroll animateIn='animate__fadeInLeft' animateOut='animate__fadeOutLeft' className='bg-transparent'>
                         <div className='w-fit mb-4 bg-transparent'>
                             <p className='text-green-400 text-sm border px-2 border-green-400 rounded-full bg-transparent'>Did you know?</p>
                         </div>
@@ -326,6 +390,7 @@ export default function Home() {
                         <div className='w-fit bg-transparent'>
                             <p className='text-xl text-white bg-transparent'>after three years with GitHub<span className='text-lg relative top-[-8px] bg-transparent'>1</span></p>
                         </div>
+                        </AnimationOnScroll>
                     </div>
                 </div>
             </div>
@@ -338,8 +403,14 @@ export default function Home() {
                             <div className='w-3/4 ml-6 mt-5 bg-transparent'>
                                 <p className='text-gray-500 font-semibold text-2xl bg-transparent'><span className='text-white bg-transparent'>GitHub Copilot</span> is your AI pair programmer that empowers you to complete tasks 55% faster by turning natural language prompts into coding suggestions.</p>
                             </div>
-                            <div className='mt-16 ml-6 bg-transparent'>
-                                <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setLineAfterGithub(true)} onMouseLeave={()=>setLineAfterGithub(false)}>Meet GitHub Copilot <AiOutlineRight className=' ml-1 mt-1 bg-transparent' /></button>
+                            <div className='mt-16 ml-6 bg-transparent h-12'>
+                                <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center transition ease-in-out' onMouseOver={()=>setLineAfterGithub(true)} onMouseLeave={()=>setLineAfterGithub(false)}>Meet GitHub Copilot 
+                                {!lineAfterGithub ? (
+                                    <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                                ) : (
+                                    <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                                )}
+                                </button>
                                 {lineAfterGithub ? (
                                     <div className='w-[32%]'>
                                         <hr id='buttonbottom' />
@@ -376,8 +447,14 @@ export default function Home() {
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>GitHub Actions</span> automates your build, test, and deployment workflow with simple and secure CI/CD.</p>
                             </div>
                         </div>
-                        <div className='mt-9 pl-16 bg-transparent'>
-                            <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setGithubActions(true)} onMouseLeave={()=>setGithubActions(false)}>Discover GitHub Actions  <AiOutlineRight className=' ml-1 mt-1 bg-transparent' /></button>
+                        <div className='mt-9 h-12 pl-16 bg-transparent'>
+                            <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setGithubActions(true)} onMouseLeave={()=>setGithubActions(false)}>Discover GitHub Actions 
+                            {!githubActions ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
                             {githubActions ? (
                                 <div className='w-[40%]'>
                                     <hr id='buttonbottom' />
@@ -397,7 +474,13 @@ export default function Home() {
                             </div>
                         </div>
                         <div className=' pl-16 bg-transparent'>
-                            <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setGithubMobile(true)} onMouseLeave={()=>setGithubMobile(false)}>Get GitHub Mobile  <AiOutlineRight className=' ml-1 mt-1 bg-transparent' /></button>
+                            <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setGithubMobile(true)} onMouseLeave={()=>setGithubMobile(false)}>Get GitHub Mobile 
+                            {!githubMobile ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
                             {githubMobile ? (
                                 <div className='w-[30%]'>
                                     <hr id='buttonbottom' />
@@ -410,6 +493,100 @@ export default function Home() {
                     </Tilt>
                 </div>
             </div>
+        </section>
+        <section className=' mt-4 h-[80vh] w-screen'>
+            <div className='max-w-7xl mx-auto h-full flex'>
+                <div className='w-20 flex flex-col justify-between'>
+                    <div className='h-48 bg-transparent overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeInDown" className='h-full'>
+                        <div className='w-1 mx-auto h-full rotate-180 rounded-t' style={{background:"linear-gradient(180deg, #D9D9D9 0%, #FFF 0.01%, #DC6F52 47.92%, #DC6D50 100%)"}}></div>
+                    </AnimationOnScroll>
+                    </div>
+                    <AnimationOnScroll animateIn="animate__fadeIn">
+                    <div className=' w-full h-20 flex justify-center items-center ' style={{background:"radial-gradient(48.08% 48.08% at 50.00% 51.92%, #FDFDFD 0%, rgba(220, 109, 80, 0.50) 0.01%, rgba(255, 255, 255, 0.00) 100%)"}}>
+                        <LuHeartHandshake className='text-white text-2xl bg-transparent'/>
+                    </div>
+                    </AnimationOnScroll>
+                    <div className='h-[55%] overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeInDown" className='h-full' delay={300}>
+                        <div className='w-1 mx-auto h-full  rounded-t' style={{background:"linear-gradient(180deg, #D9D9D9 0%, #FFF 0.01%, #DC6F52 47.92%, #DC6D50 100%)"}}></div>
+                    </AnimationOnScroll>
+                    </div>
+                </div>
+                <div className='w-full pl-5'>
+                    <div className='mt-[28vh] overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeIn" className='h-full' animateOut='animate__fadeOut' offset={300}>
+                        <p className='text-white text-3xl'>Collaboration</p>
+                    </AnimationOnScroll>
+                    </div>
+                    <div className='max-w-[65vw] mt-8 overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeIn" animateOut='animate__fadeOut' className='h-full' delay={200} offset={300}>
+                        <p className='text-white text-5xl font-medium'><span className='text-[#df7457]'>Supercharge collaboration.</span> We provide unlimited repositories, best-in-class version control, and the world’s most powerful open source community—so your team can work more efficiently together.</p>
+                    </AnimationOnScroll>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className='w-screen'>
+            <div className='max-w-7xl mx-auto rounded-xl overflow-hidden'>
+                <img src="https://github.githubassets.com/images/modules/site/issues/illo/issues-plan.png?width=2500&format=webpll" alt="" />
+            </div>
+        </section>
+        <section className=' h-screen w-screen bg-transparent'>
+            <div className='flex max-w-7xl mx-auto bg-transparent'>
+                <div className='relative w-40 bg-transparent overflow-hidden'>
+                    <AnimationOnScroll animateIn='animate__fadeInDown' animateOut='animate__fadeOutUp'>
+                    <div className='w-1 h-[110vh] ml-12 text-white relative bg-transparent' style={{background: "radial-gradient(113.42% 50.64% at 50.00% 51.92%, #DF7457 32.81%, rgba(223, 116, 87, 0.00) 100%)"}}></div>
+                    </AnimationOnScroll>
+                    <AnimationOnScroll animateIn='animate__fadeIn' offset={10} style={{animationDuration:"0.2 s"}} >
+                    <img src="https://github.githubassets.com/images/modules/site/home-campaign/git-branch-collaboration.svg" alt="line svg" className='bottom-24 right-3 absolute bg-transparent w-20' />
+                    </AnimationOnScroll>
+                </div>
+                <div className='w-full pt-24 ' style={{background:"url('https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp')", backgroundSize:"cover",}}>
+                    <div className='flex justify-between h-52 bg-transparent'>
+                        <div className='w-[48%] bg-transparent'>
+                            <AnimationOnScroll className='bg-transparent' animateIn='animate__fadeInRight'>
+                            <p className='text-gray-500 text-2xl font-medium w-[85%] bg-transparent'><span className='text-white'>GitHub Issues and GitHub Projects</span> supply flexible project management tools that adapt to your team alongside your code.</p>
+                            <button className='mt-5 text-white text-xl font-semibold py-2 flex items-center bg-transparent' onMouseOver={()=>setExploreGithub(true)} onMouseLeave={()=>setExploreGithub(false)}>Explore GitHub Issues 
+                            {!exploreGithub ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
+                            {exploreGithub ? (
+                                <div className='w-[37%]'>
+                                    <hr id='buttonbottom' />
+                                </div>
+                            ) : ""}
+                            </AnimationOnScroll>
+                        </div>
+                        <div className='relative -top-[11rem] -right-6 bg-transparent'>
+                            <div className=' overflow-hidden bg-transparent'>
+                            <AnimationOnScroll animateIn='animate__fadeInUp' className='bg-transparent' offset={300}>
+                                <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-projects.png" alt="" className='h-[28rem] rounded-lg'/>
+                            </AnimationOnScroll>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='mt-40 bg-transparent overflow-hidden'>
+                        <AnimationOnScroll animateIn='animate__fadeInLeft' offset={10} delay={800} className='bg-transparent'>
+                        <div className='w-fit mb-4 bg-transparent'>
+                            <p className='text-[#df7457] text-sm border px-2 border-[#df7457] rounded-full bg-transparent'>Did you know?</p>
+                        </div>
+                        <div className='mb-4 w-fit bg-transparent'>
+                            <p className='text-6xl text-[#df7457] bg-transparent'>80% reduction</p>
+                        </div>
+                        <div className='w-fit bg-transparent'>
+                            <p className='text-xl text-white bg-transparent font-semibold'>in onboarding time with GitHub<span className='text-lg relative top-[-8px] bg-transparent'>1</span></p>
+                        </div>
+                        </AnimationOnScroll>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className='h-screen'>
+
         </section>
     </div>
   )

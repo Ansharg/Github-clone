@@ -19,6 +19,8 @@ import {LuHeartHandshake} from 'react-icons/lu'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import "animate.css/animate.min.css";
 import Sponsors from '../Components/Sponsors'
+import {MdOutlineDone} from 'react-icons/md'
+import Footer from '../Components/Footer'
 
 export default function Home() {
     const [buttonOne,setButtonOne] = useState(false);
@@ -31,6 +33,12 @@ export default function Home() {
     const [githubDiscussion,setGithubDiscussion] = useState(false);
     const [pullRequest,setPullRequest] = useState(false);
     const [githubSponsors,setGithubSponsors] = useState(false);
+    const [githubSecurity,setGithubSecurity] = useState(false);
+    const [secretScanning,setSecretScanning] = useState(false);
+    const [dependabot,setDependabot] = useState(false);
+    const [ebook,setEbook] = useState(false);
+    const [signUp,setSignUp] = useState(false);
+    const [enterprise,setEnterprise] = useState(false);
     const defaultOptions = {
         reverse:        false,  // reverse the tilt direction
         max:            5,     // max tilt rotation (degrees)
@@ -503,7 +511,7 @@ export default function Home() {
                 <div className='w-20 flex flex-col justify-between'>
                     <div className='h-48 bg-transparent overflow-hidden'>
                     <AnimationOnScroll animateIn="animate__fadeInDown" className='h-full'>
-                        <div className='w-1 mx-auto h-full rotate-180 rounded-t' style={{background:"linear-gradient(180deg, #D9D9D9 0%, #FFF 0.01%, #DC6F52 47.92%, #DC6D50 100%)"}}></div>
+                        <div className='w-1 mx-auto h-full rounded' style={{background:"linear-gradient(180deg, rgba(231, 152, 131, 0.00) 0.01%, rgba(223, 116, 87, 0.88) 88.54%, #EEB3A3 100%)"}}></div>
                     </AnimationOnScroll>
                     </div>
                     <AnimationOnScroll animateIn="animate__fadeIn">
@@ -513,7 +521,7 @@ export default function Home() {
                     </AnimationOnScroll>
                     <div className='h-[55%] overflow-hidden'>
                     <AnimationOnScroll animateIn="animate__fadeInDown" className='h-full' delay={300}>
-                        <div className='w-1 mx-auto h-full  rounded-t' style={{background:"linear-gradient(180deg, #D9D9D9 0%, #FFF 0.01%, #DC6F52 47.92%, #DC6D50 100%)"}}></div>
+                        <div className='w-1 mx-auto h-full  rounded-t' style={{background:"linear-gradient(180deg, #FFF 0%, rgba(223, 116, 87, 0.88) 22.92%, rgba(231, 152, 131, 0.00) 100%)"}}></div>
                     </AnimationOnScroll>
                     </div>
                 </div>
@@ -675,6 +683,271 @@ export default function Home() {
                 </Tilt>
             </div>
         </section>
+        <section className=' h-[80vh] w-screen mt-24'>
+            <div className='max-w-7xl mx-auto h-full flex'>
+                <div className='w-20 flex flex-col justify-between'>
+                    <div className='h-48 bg-transparent overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeInDown" className='h-full'>
+                        <div className='w-1 mx-auto h-full rounded' style={{background:" linear-gradient(180deg, rgba(65, 84, 255, 0.00) 0%, #4154FF 53.13%, #FFF 98.96%)"}}></div>
+                    </AnimationOnScroll>
+                    </div>
+                    <AnimationOnScroll animateIn="animate__fadeIn">
+                    <div className=' w-full h-20 flex justify-center items-center ' style={{background:"radial-gradient(50.00% 50.64% at 50.00% 51.92%, rgba(65, 84, 255, 0.88) 0%, rgba(65, 84, 255, 0.70) 0.01%, rgba(255, 255, 255, 0.00) 100%)"}}>
+                        <FiLock className='text-white text-2xl bg-transparent'/>
+                    </div>
+                    </AnimationOnScroll>
+                    <div className='h-[55%] overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeInDown" className='h-full' delay={300}>
+                        <div className='w-1 mx-auto h-full  rounded-t' style={{background:"linear-gradient(180deg, #FFF 0%, #4154FF 34.38%, rgba(65, 84, 255, 0.00) 100%)"}}></div>
+                    </AnimationOnScroll>
+                    </div>
+                </div>
+                <div className='w-full pl-5'>
+                    <div className='mt-[28vh] overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeIn" className='h-full' offset={300}>
+                        <p className='text-white text-3xl'>Security</p>
+                    </AnimationOnScroll>
+                    </div>
+                    <div className='max-w-[65vw] mt-8 overflow-hidden'>
+                    <AnimationOnScroll animateIn="animate__fadeIn" className='h-full' delay={200} offset={300}>
+                        <p className='text-white text-5xl font-medium'><span className='text-[#5e6eff]'>Embed security into the developer workflow.</span> With GitHub, developers can secure their code in minutes and organizations can automatically comply with regulations.</p>
+                    </AnimationOnScroll>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className=' w-screen max-h-[60vh] mt-4'>
+            <div className=' max-w-7xl mx-auto h-[60vh] rounded-lg text-white'>
+                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600'>
+                    <div className='h-full w-full rounded-lg p-16 flex bg-[#1A1B1D] overflow-hidden'>
+                        <div className='w-20 bg-transparent'>
+                            <div className='text-gray-500 bg-transparent'>
+                                <p className=' bg-transparent'>cmake.yml</p>
+                            </div>
+                            <div className='text-gray-500 bg-transparent text-xs'>
+                                <p className=' bg-transparent'>on: push</p>
+                            </div>
+                        </div>
+                        <div className='w-full bg-transparent  flex items-center'>
+                            <AnimationOnScroll animateIn='animate__zoomIn' className='w-2/5 h-16 bg-slate-700 relative -top-4 px-5 rounded-md left-5 flex items-center justify-between shadow-lg'>
+                                <div className='bg-transparent'>
+                                    <p className='flex items-center bg-transparent text-lg'><MdOutlineDone className='bg-green-600 rounded-full mr-2'/>Build</p>
+                                </div>
+                                <div className='bg-transparent'>
+                                    <p className='bg-transparent text-gray-500 text-lg'>1m 21s</p>
+                                </div>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateIn='animate_fadeIn' delay={1000} duration={5000} className='relative flex items-center left-3 bg-transparent -top-4 z-10'>
+                                <div className='h-4 w-4 rounded-full bg-slate-700 flex justify-center items-center'>
+                                    <div className='h-3 w-3 rounded-full bg-slate-600'></div>
+                                </div>
+                                <div className='w-10 '>
+                                    <hr />
+                                </div>
+                                <div className='h-4 w-4 rounded-full bg-slate-700 flex justify-center items-center'>
+                                    <div className='h-3 w-3 rounded-full bg-slate-600'></div>
+                                </div>
+                            </AnimationOnScroll>
+                            <AnimationOnScroll animateIn='animate__zoomIn' delay={400} className='w-2/5 bg-transparent h-52 relative left-1 '>
+                                <div className='h-10 w-20 bg-slate-700 rounded-t-md flex items-center justify-center '>
+                                    <p className='font-semibold bg-slate-700'>Steps</p>
+                                </div>
+                                <div className='h-40 bg-slate-700 rounded-tr-md rounded-b-md p-5 space-y-3'>
+                                    <div className='flex items-center justify-between bg-transparent'>
+                                        <p className='flex items-center bg-transparent text-lg'><MdOutlineDone className='bg-green-600 rounded-full mr-2'/>Initialize CodeQL</p>
+                                        <p className='bg-transparent text-gray-500'>1m 42s</p>
+                                    </div>
+                                    <div className='flex items-center justify-between bg-transparent'>
+                                        <p className='flex items-center bg-transparent text-lg'><MdOutlineDone className='bg-green-600 rounded-full mr-2'/>Autobuild</p>
+                                        <p className='bg-transparent text-gray-500'>1m 24s</p>
+                                    </div>
+                                    <div className='flex items-center justify-between bg-transparent'>
+                                        <p className='flex items-center bg-transparent text-lg'><MdOutlineDone className='bg-green-600 rounded-full mr-2'/>Perform CodeQL Analyses</p>
+                                        <p className='bg-transparent text-gray-500'>1m 36s</p>
+                                    </div>
+                                </div>
+                            </AnimationOnScroll>
+                        </div>
+                    </div>
+                </Tilt>
+            </div>
+        </section>
+        <section className=' h-screen w-screen bg-transparent '>
+            <div className='flex max-w-7xl mx-auto bg-transparent'>
+                <div className='relative w-40 bg-transparent overflow-hidden'>
+                    <AnimationOnScroll animateIn='animate__fadeInDown'>
+                    <div className='w-1 h-[110vh] ml-12 text-white relative bg-transparent' style={{background: "radial-gradient(96.86% 50.64% at 50.00% 51.92%, #5E6EFF 0%, rgba(255, 255, 255, 0.00) 100%)"}}></div>
+                    </AnimationOnScroll>
+                    <AnimationOnScroll animateIn='animate__fadeIn' offset={10} style={{animationDuration:"0.2 s"}} >
+                    <img src="https://github.githubassets.com/images/modules/site/home-campaign/git-branch-security.svg" alt="line svg" className='bottom-24 right-3 absolute bg-transparent w-20' />
+                    </AnimationOnScroll>
+                </div>
+                <div className='w-full pt-24 ' style={{background:"url('https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp')", backgroundSize:"cover",}}>
+                    <div className='flex justify-between h-52 bg-transparent'>
+                        <div className='w-[48%] bg-transparent'>
+                            <AnimationOnScroll className='bg-transparent' animateIn='animate__fadeInRight'>
+                            <p className='text-gray-500 text-2xl font-medium w-[85%] bg-transparent'><span className='text-white'>GitHub Advanced Security</span> lets you gain visibility into your security posture, respond to threats proactively, and ship secure applications quickly.</p>
+                            <button className='mt-5 text-white text-xl font-semibold py-2 flex items-center bg-transparent' onMouseOver={()=>setGithubSecurity(true)} onMouseLeave={()=>setGithubSecurity(false)}>Get GitHub Advanced Security 
+                            {!githubSecurity ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
+                            {githubSecurity ? (
+                                <div className='w-[50%]'>
+                                    <hr id='buttonbottom' />
+                                </div>
+                            ) : ""}
+                            </AnimationOnScroll>
+                        </div>
+                        <div className='relative -top-[9rem] -right-6 bg-transparent'>
+                            <div className=' overflow-hidden bg-transparent'>
+                            <AnimationOnScroll animateIn='animate__fadeInRight' className='bg-transparent' offset={100}>
+                                <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-ghas-list.png" alt="" className='h-[20rem] rounded-lg'/>
+                            </AnimationOnScroll>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='mt-40 bg-transparent overflow-hidden'>
+                        <AnimationOnScroll animateIn='animate__fadeInLeft' offset={0} delay={400} className='bg-transparent'>
+                        <div className='w-fit mb-4 bg-transparent'>
+                            <p className='text-[#5e6eff] text-sm border px-2 border-[#5e6eff] rounded-full bg-transparent'>Did you know?</p>
+                        </div>
+                        <div className='mb-4 w-fit bg-transparent'>
+                            <p className='text-6xl text-[#5e6eff] bg-transparent'>56 million projects</p>
+                        </div>
+                        <div className='w-fit bg-transparent'>
+                            <p className='text-xl text-white bg-transparent font-semibold'>fixed vulnerabilities with GitHub<span className='text-lg relative top-[-8px] bg-transparent'>2</span></p>
+                        </div>
+                        </AnimationOnScroll>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className=' w-screen max-h-[70vh] isolate'>
+            <div className=' max-w-7xl mx-auto h-full rounded-lg text-white'>
+                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600'>
+                    <div className='h-[63vh] w-full rounded-lg flex bg-[#1A1B1D]'>
+                        <div className='h-full w-1/2 bg-transparent p-10 flex flex-col justify-between'>
+                            <div className='w-4/6 ml-6 mt-5 bg-transparent'>
+                                <p className='text-gray-500 font-semibold text-2xl bg-transparent'><span className='text-white bg-transparent'>Secret scanning</span> automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.</p>
+                            </div>
+                            <div className='mt-16 ml-6 bg-transparent h-12'>
+                                <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center transition ease-in-out' onMouseOver={()=>setSecretScanning(true)} onMouseLeave={()=>setSecretScanning(false)}>Read about secret scanning  
+                                {!secretScanning ? (
+                                    <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                                ) : (
+                                    <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                                )}
+                                </button>
+                                {secretScanning ? (
+                                    <div className='w-[48%]'>
+                                        <hr id='buttonbottom' />
+                                    </div>
+                                ) : ""}
+                            </div>
+                        </div>
+                        <div className='w-1/2 bg-transparent rounded-lg'>
+                            <AnimationOnScroll animateIn='animate__zoomIn' className='bg-transparent overflow-hidden rounded-lg'>
+                                <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-secret-scanning.png?width=1288&format=webpll" alt="" className='bg-transparent' />
+                            </AnimationOnScroll>
+                        </div>
+                    </div>
+                </Tilt>
+            </div>
+        </section>
+        <section className=' max-h-screen w-screen'>
+            <div className='max-w-7xl mx-auto h-full flex'>
+                <div className='w-1/2 pt-8 pr-4'>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
+                        <div className=' bg-transparent pt-16 pl-16'>
+                            <div className='w-[71%] bg-transparent'>
+                                <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>Dependabot</span> makes it easy to find and fix vulnerable dependencies in your supply chain.</p>
+                            </div>
+                        </div>
+                        <div className='mt-9 h-12 pl-16 bg-transparent'>
+                            <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setDependabot(true)} onMouseLeave={()=>setDependabot(false)}>Explore Dependabot 
+                            {!dependabot ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
+                            {dependabot ? (
+                                <div className='w-[40%]'>
+                                    <hr id='buttonbottom' />
+                                </div>
+                            ) : ""}
+                        </div>
+                        <div className='mt-[3.4rem] bg-transparent'>
+                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-dependabot.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
+                        </div>
+                    </Tilt>
+                </div>
+                <div className='w-1/2 pt-8 pl-4'>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
+                        <div className=' bg-transparent pt-16 pl-16'>
+                            <div className='w-[70%] bg-transparent'>
+                                <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>Code scanning</span> is GitHub’s static code analysis tool that helps you remediate issues in your code.</p>
+                            </div>
+                        </div>
+                        <div className=' pl-16 bg-transparent'>
+                            <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setEbook(true)} onMouseLeave={()=>setEbook(false)}>Download the latest SAST ebook  
+                            {!ebook ? (
+                                <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                            ) : (
+                                <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                            )}
+                            </button>
+                            {ebook ? (
+                                <div className='w-[54%]'>
+                                    <hr id='buttonbottom' />
+                                </div>
+                            ) : ""}
+                        </div>
+                        <div className='mt-[4rem] bg-transparent px-3 '>
+                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-code-scanning.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
+                        </div>
+                    </Tilt>
+                </div>
+            </div>
+        </section>
+        <section className='w-screen h-[60%]'>
+            <div className='max-w-7xl mx-auto h-full flex flex-col justify-end items-center'>
+                <div className='w-[65%] bg-transparent'>
+                    <p className='text-white font-bold bg-transparent text-5xl text-center'>The place for anyone from anywhere to build anything</p>
+                </div>
+                <div className='w-[53%] mt-4 bg-transparent'>
+                    <p className='text-gray-500 text-xl text-center bg-transparent'>Whether you’re scaling your startup or just learning how to code, GitHub is your home. Join the world’s largest developer platform to build the innovations that empower humanity. Let’s build from here.</p>
+                </div>
+                <div className='flex mt-8 h-20 items-center bg-transparent'>
+                    <div className='w-[17rem] flex justify-center bg-transparent'>
+                    <button className=' text-black rounded-md text-xl w-[16.2rem] bg-white font-bold py-4 px-8 flex items-center' onMouseOver={()=>setSignUp(true)} onMouseLeave={()=>setSignUp(false)}>Sign up for GitHub 
+                        {!signUp ? (
+                            <AiOutlineRight className='text-black bg-transparent text-sm ml-1'/>
+                        ) : (
+                            <BsArrowRight className='text-black bg-transparent text-lg ml-1'/>
+                        )}
+                    </button>
+                    </div>
+                    <div className=' w-[22rem] flex justify-center bg-transparent'>
+                    <button className=' text-white text-xl w-[21.2rem] font-bold py-4 px-8 border border-gray-500 rounded-md flex items-center hover:border-2 hover:border-white' onMouseOver={()=>setEnterprise(true)} onMouseLeave={()=>setEnterprise(false)}>Start a free enterprise trial
+                        {!enterprise ? (
+                            <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
+                        ) : (
+                            <BsArrowRight className='text-white bg-transparent text-lg ml-1'/>
+                        )}
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section className='h-screen w-screen -mt-[20rem]'>
+            <div className='2xl:max-w-screen-xl w-screen mx-auto h-screen' style={{background:"url('https://github.githubassets.com/images/modules/site/home-campaign/footer-galaxy.jpg')" , backgroundSize:"cover"}}>
+            </div>
+        </section>
+        <Footer />
     </div>
   )
 }

@@ -133,10 +133,10 @@ export default function Home() {
   return (
     <div style={{background:` url(${bgwebsite}) no-repeat`, backgroundSize:"cover", }} className=' h-screen w-screen '>
         <Header />
-        <div className='bg-transparent relative'>
+        <div className='bg-transparent relative 2xl:max-w-screen-xl w-screen mx-auto ' >
             <img src="https://github.githubassets.com/images/modules/site/home-campaign/hero-drone.webp" alt="space-ship" className='bg-transparent h-52 w-fit absolute right-20 ' style={{animation:"updown 7s infinite",transition:"ease-in-out"}} />
         </div>
-        <section className='bg-transparent flex '>
+        <section className='bg-transparent flex 2xl:max-w-screen-xl w-screen mx-auto '>
             <div className='bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/lines-hero.svg" alt="svg" className='bg-transparent top-12 relative left-28 w-[68vw]' />
                 <div className='h-12 w-12 flex items-center justify-center relative top-[3.3rem] text-3xl left-[6.5rem]' style={{background:"radial-gradient(49.69% 49.90% at 49.90% 49.69%, rgba(156, 109, 255, 0.69) 0%, rgba(147, 129, 185, 0.00) 100%)"}}>
@@ -424,7 +424,7 @@ export default function Home() {
             </div>
         </section>
         <section className=' max-h-[90vh] w-screen bg-transparent'>
-            <div className='flex max-h-5xl  max-w-7xl mx-auto bg-transparent'>
+            <div className='flex max-h-5xl  max-w-7xl mx-auto bg-transparent 2xl:max-w-screen-xl'>
                 <div className='relative w-40 bg-transparent overflow-hidden'>
                     <AnimationOnScroll animateIn='animate__fadeInDown' >
                     <div className='w-2 h-[90vh] ml-12 text-white relative bg-transparent' style={{background: "radial-gradient(50% 50% at 50.00% 50.00%, rgba(49, 255, 45, 0.55) 0%, rgba(255, 255, 255, 0.00) 100%)"}}></div>

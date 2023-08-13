@@ -42,10 +42,10 @@ body{
     transition: ease-in-out;
 }
 
-div
+/* div
 {
     border: 1px solid red;
-}
+} */
 
 #cursor{
     position:absolute;

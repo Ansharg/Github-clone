@@ -4,8 +4,8 @@ import {AiOutlineHeart} from 'react-icons/ai'
 export default function Sponsors() {
   return (
     <>
-    <div className='grid grid-cols-3 gap-4 bg-transparent'>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+    <div className='grid grid-cols-3 gap-4 z-10 bg-transparent'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/imolorhe.jpeg" alt="Samuel" className='h-28' />
@@ -20,7 +20,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md  cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md  cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/dayhaysoos.jpeg" alt="Samuel" className='h-28' />
@@ -35,7 +35,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/homebrew.png" alt="Samuel" className='h-28' />
@@ -50,7 +50,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/directus.png" alt="Samuel" className='h-28' />
@@ -65,7 +65,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/prophen.jpeg" alt="Samuel" className='h-28' />
@@ -80,7 +80,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/yyx990803.jpeg" alt="Samuel" className='h-28' />
@@ -95,7 +95,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/eslint.png" alt="Samuel" className='h-28' />
@@ -110,7 +110,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/chaynhq.png" alt="Samuel" className='h-28' />
@@ -125,7 +125,7 @@ export default function Sponsors() {
             </div>
             </div>
         </div>
-        <div className='py-5 bg-transparent border border-gray-500 rounded-md cursor-pointer'>
+        <div className='py-5 bg-[#1A1B1D] border border-gray-500 rounded-md cursor-pointer'>
             <div className=' w-fit mx-auto space-y-2 bg-transparent'>
             <div className='max-w-fit rounded-full overflow-hidden bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/sponsors/kazupon.jpeg" alt="Samuel" className='h-28' />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import bgwebsite from '../Asests/Images/bgwebsite.png'
 import Header from '../Components/Header'
 import {AiOutlineRight} from 'react-icons/ai'
@@ -39,6 +39,86 @@ export default function Home() {
     const [ebook,setEbook] = useState(false);
     const [signUp,setSignUp] = useState(false);
     const [enterprise,setEnterprise] = useState(false);
+    const [effect,setEffect] = useState(false);
+    const [effectOne,setEffectOne] = useState(false);
+    const [effectTwo,setEffectTwo] = useState(false);
+    const [effectRed,setEffectRed] = useState(false);
+    const [effectRedOne,setEffectRedOne] = useState(false);
+    const [effectRedTwo,setEffectRedTwo] = useState(false);
+    const [effectBlue,setEffectBlue] = useState(false);
+    const [effectBlueOne,setEffectBlueOne] = useState(false);
+    const [effectBlueTwo,setEffectBlueTwo] = useState(false);
+    const [effectBlueThree,setEffectBlueThree] = useState(false);
+    useEffect(()=>{
+        var cursor = document.querySelector('#cursor');
+        if (effect === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX -100 +'px';
+            cursor.style.top = e.clientY -100 +'px';
+            }
+        }
+         else if (effectOne === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX -100 +'px';
+            cursor.style.top = e.clientY -100 +'px';
+            }
+        }
+        else if (effectTwo === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 750 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        },[effect,effectOne,effectTwo]);
+    useEffect(()=>{
+        var cursor = document.querySelector('#cursor1');
+        if (effectRed === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 100 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        else if (effectRedOne === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 700 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        else if (effectRedTwo === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 100 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        },[effectRed,effectRedOne,effectRedTwo]);
+    useEffect(()=>{
+        var cursor = document.querySelector('#cursor2');
+        if (effectBlue === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 100 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        else if (effectBlueOne === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 100 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        else if (effectBlueTwo === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 100 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        else if (effectBlueThree === true) {
+            window.onmousemove = function(e) {
+            cursor.style.left = e.clientX - 700 +'px';
+            cursor.style.top = e.clientY +'px';
+            }
+        }
+        },[effectBlue,effectBlueOne,effectBlueTwo,effectBlueThree]);
+       
     const defaultOptions = {
         reverse:        false,  // reverse the tilt direction
         max:            5,     // max tilt rotation (degrees)
@@ -56,7 +136,7 @@ export default function Home() {
         <div className='bg-transparent relative'>
             <img src="https://github.githubassets.com/images/modules/site/home-campaign/hero-drone.webp" alt="space-ship" className='bg-transparent h-52 w-fit absolute right-20 ' style={{animation:"updown 7s infinite",transition:"ease-in-out"}} />
         </div>
-        <div className='bg-transparent flex '>
+        <section className='bg-transparent flex '>
             <div className='bg-transparent'>
                 <img src="https://github.githubassets.com/images/modules/site/home-campaign/lines-hero.svg" alt="svg" className='bg-transparent top-12 relative left-28 w-[68vw]' />
                 <div className='h-12 w-12 flex items-center justify-center relative top-[3.3rem] text-3xl left-[6.5rem]' style={{background:"radial-gradient(49.69% 49.90% at 49.90% 49.69%, rgba(156, 109, 255, 0.69) 0%, rgba(147, 129, 185, 0.00) 100%)"}}>
@@ -131,14 +211,14 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
         <section className=' mt-20 w-screen max-h-[96%] px-20'>
             <div className='max-w-7xl mx-auto max-h-5xl bg-[#171b21] rounded-2xl border border-gray-500'>
                 <div className='h-16 rounded-t-2xl bg-transparent p-4 flex justify-between border-b border-gray-500'>
                     <div className='bg-transparent flex justify-center items-center'><BsCode className='bg-transparent text-3xl text-gray-500'/></div>
                     <div className='bg-transparent flex items-center justify-center w-[40%] relative'>
                         <FiLock className=' text-gray-500 bg-transparent absolute left-3' />
-                        <input type="text" id='vscode' className='text-center border border-gray-500 w-full rounded-md' placeholder='mona-github-github-g59jpq2w5w7.github.dev'/>
+                        <input type="text" id='vscode' className='text-center border border-gray-500 w-full rounded-md bg-black' placeholder='mona-github-github-g59jpq2w5w7.github.dev'/>
                         <GoSync className='text-gray-500 bg-transparent absolute right-2'/>
                     </div>
                     <div className='bg-transparent flex justify-center items-center'><AiOutlinePlus className='bg-transparent text-2xl text-gray-500' /></div>
@@ -148,7 +228,7 @@ export default function Home() {
                     <div className=' w-full bg-transparent'>
                         <div className='h-[3.5rem] bg-transparent flex justify-start space-x-3'>
                             <div className='p-2 ml-3 bg-transparent'>
-                                <div className='p-2 rounded-t-lg mt-2'>
+                                <div className='p-2 rounded-t-lg mt-2 bg-black'>
                                     <p className='text-white'>index.html</p>
                                 </div>
                             </div>
@@ -163,7 +243,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
-                        <div className='h-[46%] border-b border-gray-500 flex' id='vscodecode'>
+                        <div className='h-[46%] border-b bg-black border-gray-500 flex' id='vscodecode'>
                             <div className='w-[8%]'>
                                 <div className='text-gray-500 pt-5 pr-2 text-right font-semibold'>
                                     <p>1</p>                                    
@@ -409,9 +489,9 @@ export default function Home() {
         </section>
         <section className=' w-screen max-h-[50vh]'>
             <div className=' max-w-7xl mx-auto h-full rounded-lg text-white'>
-                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600'>
-                    <div className='h-full w-full rounded-lg p-10 flex bg-[#1A1B1D]'>
-                        <div className='h-full w-1/2 bg-transparent'>
+                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600 overflow-hidden'>
+                    <div className='h-full w-full rounded-lg p-10 flex bg-[#1A1B1D] 'onMouseLeave={()=>{setEffect(false)}} onMouseOver={()=>{setEffect(true)}}>
+                        <div className='h-full w-1/2 bg-transparent z-10'>
                             <div className='w-3/4 ml-6 mt-5 bg-transparent'>
                                 <p className='text-gray-500 font-semibold text-2xl bg-transparent'><span className='text-white bg-transparent'>GitHub Copilot</span> is your AI pair programmer that empowers you to complete tasks 55% faster by turning natural language prompts into coding suggestions.</p>
                             </div>
@@ -430,7 +510,7 @@ export default function Home() {
                                 ) : ""}
                             </div>
                         </div>
-                        <div className='w-1/2 bg-transparent border border-gray-500 rounded-lg'>
+                        <div className='w-1/2 bg-gray-800 border border-gray-500 rounded-lg overflow-hidden z-10'>
                             <div className='h-[20%] bg-transparent flex items-end space-x-5 text-sm '>
                                 <button className='flex items-center ml-2 p-3 border-t border-r border-l rounded-md bg-[#0e1116] border-gray-500'>
                                     <FaPython className='mr-1 text-lg' />draw_scatterplot.py
@@ -442,24 +522,26 @@ export default function Home() {
                                     <FaGolang className='mr-1 text-2xl bg-transparent' />memoize.go
                                 </button>
                             </div>
-                            <div className='h-[80%]'>
+                            <div className='h-[80%] bg-black'>
                                 {/* here we have to data is it just wait for a while */}
                             </div>
                         </div>
+                        {effect && <div className=' -z-0' id='cursor'></div>}
                     </div>
                 </Tilt>
             </div>
         </section>
         <section className=' max-h-screen w-screen'>
             <div className='max-w-7xl mx-auto h-full flex'>
-                <div className='w-1/2 pt-8 pr-4'>
-                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
-                        <div className=' bg-transparent pt-16 pl-16'>
+                <div className='w-1/2 pt-8 pr-4 '>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl overflow-hidden' options={defaultOptions} >
+                        <div onMouseLeave={()=>{setEffectOne(false)}} onMouseOver={()=>{setEffectOne(true)}}>
+                        <div className=' bg-transparent pt-16 pl-16 z-10'>
                             <div className='w-[71%] bg-transparent'>
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>GitHub Actions</span> automates your build, test, and deployment workflow with simple and secure CI/CD.</p>
                             </div>
                         </div>
-                        <div className='mt-9 h-12 pl-16 bg-transparent'>
+                        <div className='mt-9 h-12 pl-16 bg-transparent z-10'>
                             <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setGithubActions(true)} onMouseLeave={()=>setGithubActions(false)}>Discover GitHub Actions 
                             {!githubActions ? (
                                 <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
@@ -473,19 +555,22 @@ export default function Home() {
                                 </div>
                             ) : ""}
                         </div>
-                        <div className='mt-[3.4rem] bg-transparent'>
-                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-actions.png?width=1209&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
+                        <div className='mt-[3.4rem] bg-transparent '>
+                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-actions.png?width=1209&format=webpll" alt="github" className=' bg-transparent rounded-xl z-20'/>
+                        </div>
+                        {effectOne && <div className=' -z-10' id='cursor'></div>}
                         </div>
                     </Tilt>
                 </div>
                 <div className='w-1/2 pt-8 pl-4'>
-                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl overflow-hidden' options={defaultOptions}>
+                    <div onMouseLeave={()=>{setEffectTwo(false)}} onMouseOver={()=>{setEffectTwo(true)}} className='h-full flex flex-col justify-between'>
                         <div className=' bg-transparent pt-16 pl-16'>
                             <div className='w-[70%] bg-transparent'>
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>GitHub Mobile</span> fits your projects in your pocket, so you never miss a beat while on the go.</p>
                             </div>
                         </div>
-                        <div className=' pl-16 bg-transparent'>
+                        <div className='mt-9 pl-16 bg-transparent '>
                             <button className=' text-white text-xl bg-transparent font-semibold py-2 flex items-center' onMouseOver={()=>setGithubMobile(true)} onMouseLeave={()=>setGithubMobile(false)}>Get GitHub Mobile 
                             {!githubMobile ? (
                                 <AiOutlineRight className='text-white bg-transparent text-sm ml-1'/>
@@ -499,9 +584,11 @@ export default function Home() {
                                 </div>
                             ) : ""}
                         </div>
-                        <div className='mt-[6rem] bg-transparent px-3 '>
-                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-mobile.png?width=966&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
+                        <div className='mt-[8rem] bg-transparent px-3 '>
+                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-mobile.png?width=966&format=webpll" alt="github" className=' bg-transparent rounded-xl z-10'/>
                         </div>
+                        {effectTwo && <div className=' -z-10' id='cursor'></div>}
+                    </div>
                     </Tilt>
                 </div>
             </div>
@@ -600,7 +687,8 @@ export default function Home() {
         <section className=' max-h-screen w-screen isolate bg-transparent'>
             <div className='max-w-7xl mx-auto h-full flex bg-transparent'>
                 <div className='w-1/2 pt-8 pr-4 bg-transparent'>
-                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl ' options={defaultOptions}>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl overflow-hidden ' options={defaultOptions}>
+                    <div onMouseLeave={()=>{setEffectRed(false)}} onMouseOver={()=>{setEffectRed(true)}} className='h-full flex flex-col justify-between'>
                         <div className=' bg-transparent pt-16 pl-16'>
                             <div className='w-[71%] bg-transparent'>
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>GitHub Discussions</span> create space to ask questions and have open-ended conversations.</p>
@@ -623,10 +711,13 @@ export default function Home() {
                         <div className='mt-[3.4rem] bg-transparent'>
                             <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-discussions.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
                         </div>
+                        {effectRed && <div className=' -z-10' id='cursor1'></div>}
+                    </div>
                     </Tilt>
                 </div>
                 <div className='w-1/2 pt-8 pl-4'>
-                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl overflow-hidden' options={defaultOptions}>
+                    <div onMouseLeave={()=>{setEffectRedOne(false)}} onMouseOver={()=>{setEffectRedOne(true)}} className='h-full flex flex-col justify-between overflow-hidden'>
                         <div className=' bg-transparent pt-16 pl-16'>
                             <div className='w-[70%] bg-transparent'>
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>GitHub Mobile</span> fits your projects in your pocket, so you never miss a beat while on the go.</p>
@@ -649,14 +740,16 @@ export default function Home() {
                         <div className='mt-[6rem] bg-transparent  overflow-hidden rounded-br-xl'>
                             <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-pull-requests.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-tl-xl h-[24.5rem] ml-1'/>
                         </div>
+                        {effectRedOne && <div className=' -z-10' id='cursor1'></div>}
+                    </div>
                     </Tilt>
                 </div>
             </div>
         </section>
         <section className=' w-screen max-h-[50vh] mt-8'>
             <div className=' max-w-7xl mx-auto h-[60vh] rounded-lg text-white'>
-                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600'>
-                    <div className='h-full w-full rounded-lg p-10 flex bg-[#1A1B1D] overflow-hidden'>
+                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600 overflow-hidden'>
+                    <div className='h-full w-full rounded-lg p-10 flex bg-[#1A1B1D] overflow-hidden' onMouseLeave={()=>{setEffectRedTwo(false)}} onMouseOver={()=>{setEffectRedTwo(true)}}>
                         <div className='h-full w-1/2 bg-transparent flex flex-col justify-between'>
                             <div className='w-3/4 ml-6 mt-5 bg-transparent'>
                                 <p className='text-gray-500 font-semibold text-2xl bg-transparent'><span className='text-white bg-transparent'>GitHub Sponsors</span> lets you support your favorite open source maintainers and projects.</p>
@@ -676,9 +769,10 @@ export default function Home() {
                                 ) : ""}
                             </div>
                         </div>
-                        <div className='bg-transparent w-1/2 -rotate-[15deg] relative -top-40 -right-6'>
-                            <Sponsors className='bg-transparent ' />
+                        <div className='bg-transparent w-1/2 -rotate-[15deg] relative -top-40 -right-6 z-10'>
+                            <Sponsors className='z-10 ' />
                         </div>
+                        {effectRedTwo && <div className=' z-0' id='cursor1'></div>}
                     </div>
                 </Tilt>
             </div>
@@ -718,8 +812,8 @@ export default function Home() {
         </section>
         <section className=' w-screen max-h-[60vh] mt-4'>
             <div className=' max-w-7xl mx-auto h-[60vh] rounded-lg text-white'>
-                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600'>
-                    <div className='h-full w-full rounded-lg p-16 flex bg-[#1A1B1D] overflow-hidden'>
+                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600 overflow-hidden'>
+                    <div className='h-full w-full rounded-lg p-16 flex bg-[#1A1B1D] overflow-hidden' onMouseLeave={()=>{setEffectBlue(false)}} onMouseOver={()=>{setEffectBlue(true)}}>
                         <div className='w-20 bg-transparent'>
                             <div className='text-gray-500 bg-transparent'>
                                 <p className=' bg-transparent'>cmake.yml</p>
@@ -768,6 +862,7 @@ export default function Home() {
                                 </div>
                             </AnimationOnScroll>
                         </div>
+                        {effectBlue && (<div className=' z-0' id='cursor2'></div>)}
                     </div>
                 </Tilt>
             </div>
@@ -827,8 +922,8 @@ export default function Home() {
         </section>
         <section className=' w-screen max-h-[70vh] isolate'>
             <div className=' max-w-7xl mx-auto h-full rounded-lg text-white'>
-                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600'>
-                    <div className='h-[63vh] w-full rounded-lg flex bg-[#1A1B1D]'>
+                <Tilt options={defaultOptions} className='h-full w-full text-white  rounded-xl border border-gray-600 overflow-hidden'>
+                    <div className='h-[63vh] w-full rounded-lg flex bg-[#1A1B1D]' onMouseLeave={()=>{setEffectBlueOne(false)}} onMouseOver={()=>{setEffectBlueOne(true)}}>
                         <div className='h-full w-1/2 bg-transparent p-10 flex flex-col justify-between'>
                             <div className='w-4/6 ml-6 mt-5 bg-transparent'>
                                 <p className='text-gray-500 font-semibold text-2xl bg-transparent'><span className='text-white bg-transparent'>Secret scanning</span> automatically looks for partner patterns and prevents fraudulent use of accidentally committed secrets.</p>
@@ -848,11 +943,12 @@ export default function Home() {
                                 ) : ""}
                             </div>
                         </div>
-                        <div className='w-1/2 bg-transparent rounded-lg'>
+                        <div className='w-1/2 bg-transparent rounded-lg z-10'>
                             <AnimationOnScroll animateIn='animate__zoomIn' className='bg-transparent overflow-hidden rounded-lg'>
-                                <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-secret-scanning.png?width=1288&format=webpll" alt="" className='bg-transparent' />
+                                <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-secret-scanning.png?width=1288&format=webpll" alt="" className='bg-transparent z-10' />
                             </AnimationOnScroll>
                         </div>
+                        {effectBlueOne && (<div className='z-0' id='cursor2'></div>)}
                     </div>
                 </Tilt>
             </div>
@@ -860,7 +956,8 @@ export default function Home() {
         <section className=' max-h-screen w-screen'>
             <div className='max-w-7xl mx-auto h-full flex'>
                 <div className='w-1/2 pt-8 pr-4'>
-                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl overflow-hidden' options={defaultOptions}>
+                        <div onMouseLeave={()=>{setEffectBlueTwo(false)}} onMouseOver={()=>{setEffectBlueTwo(true)}}>
                         <div className=' bg-transparent pt-16 pl-16'>
                             <div className='w-[71%] bg-transparent'>
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>Dependabot</span> makes it easy to find and fix vulnerable dependencies in your supply chain.</p>
@@ -880,13 +977,16 @@ export default function Home() {
                                 </div>
                             ) : ""}
                         </div>
-                        <div className='mt-[3.4rem] bg-transparent'>
-                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-dependabot.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
+                        <div className='mt-[3.4rem] bg-transparent z-10'>
+                            <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-dependabot.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-xl z-10'/>
+                        </div>
+                        {effectBlueTwo && (<div className='-z-10' id='cursor2'></div>)}
                         </div>
                     </Tilt>
                 </div>
                 <div className='w-1/2 pt-8 pl-4'>
-                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl' options={defaultOptions}>
+                    <Tilt className='h-full bg-[#1A1B1D] border flex flex-col justify-between border-gray-500 rounded-xl overflow-hidden' options={defaultOptions}>
+                    <div onMouseLeave={()=>{setEffectBlueThree(false)}} onMouseOver={()=>{setEffectBlueThree(true)}} className='h-full flex flex-col justify-between'>
                         <div className=' bg-transparent pt-16 pl-16'>
                             <div className='w-[70%] bg-transparent'>
                                 <p className='text-gray-500 text-2xl bg-transparent font-medium'><span className='text-white bg-transparent'>Code scanning</span> is GitHub’s static code analysis tool that helps you remediate issues in your code.</p>
@@ -909,6 +1009,8 @@ export default function Home() {
                         <div className='mt-[4rem] bg-transparent px-3 '>
                             <img src="https://github.githubassets.com/images/modules/site/home-campaign/illu-code-scanning.png?width=1208&format=webpll" alt="github" className=' bg-transparent rounded-xl'/>
                         </div>
+                        {effectBlueThree && (<div className='-z-10' id='cursor2'></div>)}
+                    </div>
                     </Tilt>
                 </div>
             </div>
